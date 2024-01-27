@@ -1,2 +1,2 @@
 # people-counter-api
-Uni project
+Uni project (subject: Technologie chmurowe)
