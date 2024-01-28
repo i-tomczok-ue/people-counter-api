@@ -1,9 +1,6 @@
-import flask
 from flask import Flask, request
 from flask_restful import Resource, Api
 import cv2
-import requests
-from io import BytesIO
 import numpy as np
 
 app = Flask(__name__)
@@ -18,7 +15,6 @@ class PeopleCounter(Resource):
         img = cv2.imread("images/children-428909_1280.jpg")
         boxes, weights = hog.detectMultiScale(img, winStride=(5, 5))
         return {'count': len(boxes)}
-
 
 
 class PeopleCounterWithLinkGiven(Resource):
@@ -58,4 +54,3 @@ api.add_resource(HelloWorld, '/test')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
