@@ -12,7 +12,7 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 class PeopleCounter(Resource):
     def get(self):
-        img = cv2.imread("images/children-428909_1280.jpg")
+        img = cv2.imread("images/family-932245_1280.jpg")
         boxes, weights = hog.detectMultiScale(img, winStride=(5, 5))
         return {'count': len(boxes)}
 
